@@ -13,6 +13,79 @@ body {
   font-family: 'General Sans', sans-serif;
 }
 
+/* Typewriter Animation */
+@keyframes typing {
+  0%, 40% { content: ""; }
+  2%, 38% { content: "W"; }
+  4%, 36% { content: "We"; }
+  6%, 34% { content: "Web"; }
+  8%, 32% { content: "Web "; }
+  10%, 30% { content: "Web E"; }
+  12%, 28% { content: "Web En"; }
+  14%, 26% { content: "Web Ent"; }
+  16%, 24% { content: "Web Entw"; }
+  18%, 22% { content: "Web Entwickler"; }
+
+  45%, 85% { content: ""; }
+  47%, 83% { content: "D"; }
+  49%, 81% { content: "De"; }
+  51%, 79% { content: "Des"; }
+  53%, 77% { content: "Desi"; }
+  55%, 75% { content: "Desig"; }
+  57%, 73% { content: "Design"; }
+  59%, 71% { content: "Designe"; }
+  61%, 69% { content: "Designer"; }
+
+  90%, 100% { content: ""; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+  position: relative;
+  display: inline-block;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 8s infinite;
+  @apply bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent;
+}
+
+.typewriter::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 2px;
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "Entwickler"; }
+    25% { content: "Designer"; }
+    50% { content: "Kreativ"; }
+    75% { content: "Mensch"; }
+  }
+
+  .typewriter::before {
+    content: "Entwickler";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
 @layer utilities {
   .c-space {
     @apply sm:px-10 px-5;

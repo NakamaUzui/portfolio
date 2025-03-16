@@ -1,20 +1,17 @@
-const Alert = ({ type, text }) => {
+import { motion } from 'framer-motion';
+
+const Alert = ({ text, type }) => {
   return (
-    <div className="fixed bottom-5 right-5 flex justify-center items-center z-50">
-      <div
-        className={`p-2 ${
-          type === 'danger' ? 'bg-red-800' : 'bg-blue-800'
-        } items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex rounded-md p-5`}
-        role="alert">
-        <p
-          className={`flex rounded-full ${
-            type === 'danger' ? 'bg-red-500' : 'bg-blue-500'
-          } uppercase px-2 py-1 text-xs font-semibold mr-3`}>
-          {type === 'danger' ? 'Failed' : 'Success'}
-        </p>
-        <p className="mr-2 text-left">{text}</p>
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      className={`p-4 rounded-lg shadow-lg backdrop-blur-sm border ${
+        type === 'success' ? 'bg-green-500/20 border-green-500/50' : 'bg-red-500/20 border-red-500/50'
+      }`}
+    >
+      <p className="text-white text-sm font-medium">{text}</p>
+    </motion.div>
   );
 };
 

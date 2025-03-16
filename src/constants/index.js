@@ -2,22 +2,22 @@ export const navLinks = [
   {
     id: 1,
     name: 'Home',
-    href: '#home',
+    href: '/',
   },
   {
     id: 2,
-    name: 'About',
-    href: '#about',
+    name: 'Über mich',
+    href: '/about',
   },
   {
     id: 3,
-    name: 'Work',
-    href: '#work',
+    name: 'Projekte',
+    href: '/projects',
   },
   {
     id: 4,
-    name: 'Contact',
-    href: '#contact',
+    name: 'Kontakt',
+    href: '/contact',
   },
 ];
 
@@ -28,7 +28,7 @@ export const clientReviews = [
     position: 'Marketing Director at GreenLeaf',
     img: 'assets/review1.png',
     review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+      'Working with Patrick was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const clientReviews = [
     position: 'Founder of TechGear Shop',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'Patrick’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ export const clientReviews = [
     position: 'Project Manager at UrbanTech ',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'I can’t say enough good things about Patrick. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
   },
   {
     id: 4,
@@ -52,16 +52,15 @@ export const clientReviews = [
     position: 'CEO of BrightStar Enterprises',
     img: 'assets/review4.png',
     review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+      'Patrick was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
 ];
 
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
-    subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
+    title: 'KI-Podcast Studio',
+    desc: 'Eine revolutionäre Software-as-a-Service Plattform, die die Podcast-Erstellung neu definiert. Mit fortschrittlichen KI-Funktionen wie Text-zu-Mehrfachstimmen-Konvertierung können Ersteller vielfältige Sprachausgaben aus einem einzigen Text generieren.',
+    subdesc: 'Entwickelt als einzigartige SaaS-Anwendung mit Next.js 14, Tailwind CSS, TypeScript, Framer Motion und Convex, optimiert für maximale Leistung und Skalierbarkeit.',
     href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
@@ -95,10 +94,9 @@ export const myProjects = [
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
-    subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
+    title: 'Echtzeit-Dokumentenbearbeitung',
+    desc: 'Eine leistungsstarke kollaborative App, die die Möglichkeiten der Echtzeit-Dokumentenbearbeitung erweitert. Als verbesserte Version von Google Docs unterstützt sie Millionen von Mitarbeitern gleichzeitig und stellt sicher, dass jede Änderung sofort und präzise erfasst wird.',
+    subdesc: 'Mit LiveDoc können Benutzer die Zukunft der Zusammenarbeit erleben, bei der mehrere Mitwirkende in Echtzeit ohne Verzögerung zusammenarbeiten können, dank Next.js und den neuesten Liveblocks-Funktionen.',
     href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
@@ -132,10 +130,9 @@ export const myProjects = [
     ],
   },
   {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
-    subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+    title: 'Gesundheitsmanagement-System',
+    desc: 'Eine innovative Healthcare-Plattform zur Optimierung essentieller medizinischer Prozesse. Sie vereinfacht die Patientenregistrierung, Terminplanung und Verwaltung von Krankenakten für ein nahtloses Erlebnis sowohl für Gesundheitsdienstleister als auch Patienten.',
+    subdesc: 'Mit Fokus auf Effizienz integriert CarePulse komplexe Formulare und SMS-Benachrichtigungen durch die Verwendung von Next.js, Appwrite, Twillio und Sentry zur Verbesserung der betrieblichen Abläufe.',
     href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
@@ -171,10 +168,9 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-    subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
+    title: 'Online-Banking Plattform',
+    desc: 'Eine umfassende Online-Banking-Plattform, die Benutzern ein zentrales Finanzmanagement-Dashboard bietet. Sie ermöglicht es Benutzern, mehrere Bankkonten zu verbinden, Transaktionen in Echtzeit zu überwachen und problemlos Geld an andere Benutzer zu überweisen.',
+    subdesc: 'Entwickelt mit Next.js 14 Appwrite, Dwolla und Plaid, gewährleistet Horizon ein reibungsloses und sicheres Banking-Erlebnis, maßgeschneidert für die Bedürfnisse moderner Verbraucher.',
     href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
@@ -208,10 +204,9 @@ export const myProjects = [
     ],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
+    title: 'KI-Bildbearbeitung App',
+    desc: 'Eine bahnbrechende Software-as-a-Service-Anwendung, die es Benutzern ermöglicht, mit KI-Technologie beeindruckende Bildmanipulationen zu erstellen. Mit Funktionen wie KI-gesteuerter Bildbearbeitung, einem Zahlungssystem und einem kreditbasierten Modell.',
+    subdesc: 'Entwickelt mit Next.js 14, Cloudinary AI, Clerk und Stripe, kombiniert Imaginify modernste Technologie mit einem benutzerorientierten Ansatz. Es kann zu einem Nebeneinkommen oder sogar zu einem vollwertigen Geschäft ausgebaut werden.',
     href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
@@ -261,27 +256,27 @@ export const workExperiences = [
   {
     id: 1,
     name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+    pos: 'Lead Entwickler',
+    duration: '2023 - Heute',
+    title: "Framer ist mein bevorzugtes Tool für interaktive Prototypen. Ich nutze es, um Designs zum Leben zu erwecken und Stakeholdern die Möglichkeit zu geben, den Benutzerfluss und die Interaktionen vor der Entwicklung zu erleben.",
     icon: '/assets/framer.svg',
     animation: 'victory',
   },
   {
     id: 2,
     name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
+    pos: 'Web Entwickler',
+    duration: '2022 - 2023',
+    title: "Figma ist meine erste Wahl für kollaboratives Design. Ich nutze es für die nahtlose Zusammenarbeit mit Teammitgliedern und Kunden, um Echtzeit-Feedback und Design-Iterationen zu ermöglichen.",
     icon: '/assets/figma.svg',
     animation: 'clapping',
   },
   {
     id: 3,
     name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+    pos: 'Junior Web Entwickler',
+    duration: '2021 - 2022',
+    title: "Notion hilft mir, meine Projekte organisiert zu halten. Ich nutze es für Projektmanagement, Task-Tracking und als zentrale Anlaufstelle für Dokumentation.",
     icon: '/assets/notion.svg',
     animation: 'salute',
   },

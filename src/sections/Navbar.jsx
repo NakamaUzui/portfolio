@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { navLinks } from '../constants/index.js';
 
@@ -6,9 +7,9 @@ const NavItems = ({ onClick = () => {} }) => (
   <ul className="nav-ul">
     {navLinks.map((item) => (
       <li key={item.id} className="nav-li">
-        <a href={item.href} className="nav-li_a" onClick={onClick}>
+        <Link to={item.href} className="nav-li_a" onClick={onClick}>
           {item.name}
-        </a>
+        </Link>
       </li>
     ))}
   </ul>
@@ -25,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
-            Adrian
+            Patrick
           </a>
 
           <button
