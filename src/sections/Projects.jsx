@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
+import { motion } from 'framer-motion';
 
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
@@ -21,6 +22,15 @@ const Projects = () => {
         return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
       }
     });
+  };
+
+  const scrollToContact = () => {
+    window.location.href = '/contact';
+    // Kurze Verzögerung für die Navigation
+    setTimeout(() => {
+      const contactForm = document.getElementById('contact-form');
+      contactForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
 
   useGSAP(() => {
@@ -59,14 +69,15 @@ const Projects = () => {
               ))}
             </div>
 
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer">
-              <p>Kontaktiere mich für die Live-Seite.</p>
+            <motion.button
+              onClick={scrollToContact}
+              className="flex items-center gap-2 cursor-pointer text-white-600 hover:text-purple-500 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <p>Kontaktiere mich für die Live-Seite</p>
               <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
+            </motion.button>
           </div>
 
           <div className="flex justify-between items-center mt-7">

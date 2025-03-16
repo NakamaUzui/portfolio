@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative p-6 bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10 w-full">
+    <div id="contact-form" className="relative p-6 bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10 w-full">
       <div className="fixed bottom-4 right-4 z-[9999]"> {/* Geänderte Position */}
         {alert.show && <Alert {...alert} />}
       </div>
