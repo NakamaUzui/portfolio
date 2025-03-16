@@ -25,23 +25,18 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_USERID,        // Korrigierte Variable
-        import.meta.env.VITE_EMAILJS_TEMPLATEID,    // Korrigierte Variable
-        {
-          from_name: form.name,
-          to_name: "Patrick",                       // Dein Name
-          from_email: form.email,
-          to_email: "patricky.web@gmail.com",    // Deine Email
-          message: form.message,
-        }
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_USERID,        // Service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATEID,    // Template ID
+        formRef.current,                            // Form Reference statt direktem Objekt
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY     // Public Key
       )
       .then(
         () => {
           setLoading(false);
           showAlert({
             show: true,
-            text: 'Thank you for your message 😃',
+            text: 'Danke für deine Nachricht 😃',
             type: 'success',
           });
 
@@ -60,10 +55,10 @@ const Contact = () => {
 
           showAlert({
             show: true,
-            text: "I didn't receive your message 😢",
+            text: "Nachricht konnte nicht gesendet werden 😢",
             type: 'danger',
           });
-        },
+        }
       );
   };
 
