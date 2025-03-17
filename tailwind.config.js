@@ -29,4 +29,17 @@ export default {
     },
   },
   plugins: [],
+  // Performance optimizations
+  future: {
+    hoverOnlyWhenSupported: true,
+    respectDefaultRingColorOpacity: true,
+  },
+  // Reduziere unused styles
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      safelist: ['html', 'body'],
+    },
+  },
 };

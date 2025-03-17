@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
 import { OrbitControls, ContactShadows, Environment } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import ContactGlobe from '../components/ContactGlobe';
@@ -30,68 +31,61 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="relative p-6 bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10">
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-blue-500/5"
-      />
-      
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Left Column - Contact Info */}
-        <div className="flex-1 space-y-4">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
-              Lass uns verbinden
-            </h2>
-            <motion.span
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-sm text-white/60 italic bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm"
-            >
-              Lass uns etwas Großartiges erschaffen
-            </motion.span>
-          </div>
-
-          {contactItems.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-              onClick={item.onClick}
-              className="flex items-center gap-4 hover:bg-white/5 p-4 rounded-lg transition-all group cursor-pointer"
-            >
-              <div className={`p-3 rounded-lg ${item.bgColor} ${item.hoverColor} transition-all`}>
-                <img src={item.icon} alt={item.title} className="w-5 h-5 invert" />
+    <div className="grid lg:grid-cols-2 gap-8">
+      {/* Contact Info Cards */}
+      <div className="space-y-4">
+        {contactItems.map((item, index) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className={`group p-6 rounded-xl border border-white/10 ${item.bgColor} backdrop-blur-sm 
+                       transition-all duration-300 ${item.hoverColor} cursor-pointer`}
+            onClick={item.onClick}
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-white/10 p-2">
+                <img src={item.icon} alt={item.title} className="w-full h-full" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <h3 className="text-white font-medium">{item.title}</h3>
                 <p className="text-white-600">{item.content}</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
-        {/* Right Column - 3D Globe */}
-        <div className="flex-1 h-[300px] relative">
-          <div className="absolute inset-0 bg-gradient-radial from-purple-500/10 via-transparent to-transparent" />
-          <Canvas shadows camera={{ position: [0, 0, 5], fov: 45 }}>
-            <ambientLight intensity={0.5} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
+      {/* 3D Phone Model */}
+      <div className="relative h-[400px] rounded-xl overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-radial from-purple-500/10 via-transparent to-transparent" />
+        <Canvas 
+          shadows 
+          camera={{ position: [0, 0, 5], fov: 45 }}
+          dpr={[1, 2]} // Optimierte Pixeldichte
+          performance={{ min: 0.5 }} // Performance Optimierung
+        >
+          <Suspense fallback={null}>
             <ContactGlobe />
             <Environment preset="city" />
             <ContactShadows
-              opacity={0.5}
-              scale={10}
-              blur={2}
-              far={10}
-              resolution={256}
+              opacity={0.3}
+              scale={5}
+              blur={1}
+              far={5}
+              resolution={128}
               color="#000000"
             />
-            <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-          </Canvas>
-        </div>
+            <OrbitControls 
+              enableZoom={false} 
+              autoRotate 
+              autoRotateSpeed={0.5}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+          </Suspense>
+        </Canvas>
       </div>
     </div>
   );
